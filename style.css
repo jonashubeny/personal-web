@@ -1,0 +1,261 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #333333;
+    color: #EEEEEE;
+    font-family: "Google Inter"; font-size: 130%;
+     background: radial-gradient(
+      circle at 20% 20%,
+      #3b3b3b,
+      #1d1d1f 60%
+  );
+}
+.hero {
+    min-height: 100vh;         /* výška celé obrazovky */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   /* vertikálně doprostřed */
+    align-items: center;       /* horizontálně doprostřed */
+    gap: 10px;                 /* mezery mezi řádky */
+    padding: 24px;             /* ať to na mobilech nedrží na okrajích */
+    transform: translateY(-15vh);
+}
+
+.topnav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 16px 24px;
+    z-index: 1000;
+    background: rgba(24, 24, 24, 0.9);
+    backdrop-filter: blur(6px);
+}
+
+.topnav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 24px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.topnav a {
+    position: relative;
+    color: #EEEEEE;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    width: fit-content;
+}
+
+.topnav a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 2px;
+    width: 100%;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 200ms ease;
+}
+
+.topnav a:hover::after,
+.topnav a:focus-visible::after{
+  transform: scaleX(1);
+}
+
+
+.hello {
+    margin: 0 0 6px 0;
+}
+
+H1 {
+    color: #EEEEEE;
+    font-family: monospace; font-size: 100px;
+    margin: 0;
+}
+
+h1.typewriter {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid currentColor;
+    width: 0;
+
+    animation: typing-name 3s steps(12, end) infinite,
+             blink 0.8s step-end infinite;
+}
+
+@keyframes typing-name {
+    0%   { width: 0; }
+    25%  { width: 0;}
+    40%  { width: 12ch; }
+    60%  { width: 12ch; }
+    100% { width: 0; }  
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+.desc {
+    color: #EEEEEE;
+    font-family: "Inter"; font-size: 130%;
+}
+
+hr{
+    border: 1px solid #EEEEEE;
+    max-width: 800px;
+}
+
+
+.about { 
+    color: #EEEEEE;
+    max-width: 700px;
+    font-size: 120%;
+    background: #2b2b2b;
+    border-radius: 14px;
+    padding: 32px;
+    margin-bottom: 40px;
+    border: 1px solid #444;
+    transition: all 0.3s;
+}
+
+.about:hover {
+    transform: scale(1.1);
+}
+
+.skills { 
+    color: #EEEEEE;
+    max-width: 400px;
+    font-size: 120%;
+    background: #2b2b2b;
+    border-radius: 14px;
+    padding: 32px;
+    margin-bottom: 40px;
+    border: 1px solid #444;
+    margin-top: 10%;
+    transition: all 0.3s;
+}
+
+.skills:hover {
+    transform: scale(1.1);
+}
+
+.skills ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill {
+    padding: 13px;
+}
+
+.back-video {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+@media (min-aspect-ratio: 16/9){
+    .back-video{
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio: 16/9){
+    .back-video{
+        width: auto;
+        height: 100%;
+    }
+}
+
+.scroll-down img {
+    cursor: pointer;
+}
+
+.arrow {
+    transition: all 0.3s;
+}
+
+.arrow:hover {
+    transform: scale(1.1);
+}
+
+.contacts {
+    color: #EEEEEE;
+    max-width: 400px;
+    font-size: 120%;
+    background: #2b2b2b;
+    border-radius: 14px;
+    padding: 32px;
+    margin-bottom: 40px;
+    border: 1px solid #444;
+    margin-top: 10%;
+    transition: all 0.3s;
+}
+
+.contacts:hover {
+    transform: scale(1.1);
+}
+
+.contacts ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column; /* pod sebe */
+    gap: 12px;  
+}
+
+.contacts a {
+    color: #EEEEEE;
+    text-decoration: none;
+    font-weight: 600;
+    width: fit-content;
+    padding: 13px;
+}
+
+.contact {
+    padding: 13px;
+}
+
+.contacts a{ display:block; padding:10px 13px; text-decoration:none; color:#EEE; }
+
+.contacts a span{
+  position: relative;
+  display: inline-block;
+}
+
+.contacts a span::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-2px;
+  height:2px;
+  width:100%;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin:left;
+  transition: transform 200ms ease;
+}
+
+.contacts a:hover span::after,
+.contacts a:focus-visible span::after{
+  transform: scaleX(1);
+}
+
+#about, #skills, #contact{
+  scroll-margin-top: 20vh;
+}
