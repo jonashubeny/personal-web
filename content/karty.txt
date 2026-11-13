@@ -1,0 +1,74 @@
+Neco o mne:
+I'm a 16-year-old IT student from the Czech Republic. I'm passionate about technology, Linux, and building things. I enjoy exploring how things work, experimenting with new ideas, and turning them into something real.
+
+I'm always curious about new technologies, open-source projects, and opportunities to learn something new.
+
+--------------------------------------------------------------------
+Modulbit:
+KRATSI VERZE
+I co-run ModulBit, making everyday tech easier for older people.
+ModulBit is a small open-source project making modern technology usable for people who didn't grow up with it. I co-founded it, and I split my time between shaping our first product, Jana, running our own Forgejo and infrastructure, and keeping the team pointed in one direction.
+
+DELSI VERZE
+ModulBit is a small open-source project with one goal: making modern technology accessible, practical and friendly for everyone, at any age. Our first product is Jana, an AI assistant that helps older people with everyday digital tasks, starting with writing clear emails.
+
+I co-founded ModulBit and work across the whole project. On the product side, I helped define Jana's first version and the UX principles we design against: large readable text, no jargon, and an interface that forgives mistakes. I've also worked on a simpler, card-based mode as an alternative to the chat.
+
+Behind the scenes, I run and customize our self-hosted Forgejo, keep its configuration in Ansible, and contribute to our contributor docs, branding and website. We're a small team, so I pick up whatever the project needs next.
+
+Fedora:
+KRATSI VERZE
+I write and maintain Fedora documentation as a member of the Docs Team and the Fedora Data Working Group. Since February 2026, 31 of my pull requests have been merged across 13 Fedora repositories.
+
+DELSI VERZE
+Fedora is one of the biggest community Linux distributions, and its documentation is often the first thing a new user reads. I've been contributing since February 2026, mostly to Quick Docs and the Beginner's Guide: a new guide to power management with powertop2tuned, updated security-key (YubiKey) setup, a section on moving files between Windows, macOS and Linux, and more detailed image descriptions.
+
+I also help keep the docs in order. I triage and close outdated issues, review and merge other people's fixes, and test commands before they go in. I helped move the Docs Team's own guides from Pagure to Fedora Forge, and I proposed a common README for the docs repositories and rolled it out to eight of them.
+
+In the Fedora Data Working Group I built the group's Forge front page, added its documentation to the Fedora Docs site, and implemented Parquet import in the group's datanommer-mini tool. Lately I'm writing Fedora Server documentation on LVM snapshots.
+
+Beyond docs, I'm involved in Fedora Server and infrastructure. I started the discussion about which applications a Fedora home server spin-off should ship by default, and I'm writing Server documentation on using LVM snapshots to make updates more resilient. In Fedora's infrastructure Ansible, I fixed the staging login pages so they link to the staging account system instead of production.
+
+Hackathony:
+KRAT.
+I build things against the clock at hackathons, most recently Rakathon and Hack Jak Brno.
+
+Hackathons are where I learn fastest: a real problem, a small team and a weekend to ship something that works. So far I’ve competed at Rakathon, where we built PillGaze for doctors, and at Hack Jak Brno.
+
+DELS:
+I like hackathons because they force you to stop planning and start building. You get a problem from someone who actually has it, a team of a few people and very little time, and by the end there has to be something you can show.
+
+At Rakathon I was on a three-person team, and we built PillGaze, a tool that helps doctors put together a patient’s medication history. The patient photographs their medicine boxes and handwritten notes, AI pulls out the drugs and dosages, and the patient confirms or corrects them by hand. The doctor then enters an anonymous code and sees a clean table of medications, along with possible drug interactions. Together with the challenge giver, we decided that interactions should be shown only to the doctor, and only when the doctor asks for them, so the patient isn’t scared by raw warnings. The app is fully anonymous: the doctor sees the medication data and nothing that identifies the patient. I owned the mobile-first frontend, while my teammates built the Go backend, the drug database and the interaction engine.
+
+Projekty:
+KRATSI VERZE
+I build my own tools and systems, from a Linux distro to a music downloader.
+
+In my free time I build projects that teach me how things work under the hood. The biggest ones are JonasOS, my own Linux distribution, and playlist-sync, a tool that turns Spotify playlists into a tagged MP3 library.
+
+DELSI VERZE
+Most of what I know, I learned by building something I wanted and figuring it out along the way. My two biggest projects started exactly like that.
+
+JonasOS began in May 2026, after I watched a video of someone making their own distro. I had no experience and had never written a bash script, so my first goal was simply to get an ISO to boot. Today JonasOS is a Debian-based live system built with live-build. My scripts build the ISO inside a Podman container and boot it in QEMU, so the whole system can be rebuilt with one command. It boots into an Xfce desktop with LightDM, installs to disk through the Calamares installer, and ships with my own defaults: the Arc-Red theme, a tuned shell setup for every new user and a small jonasos command-line tool with info, update and doctor commands. Along the way I learned bash, how a live system is assembled package by package, and how much of a distro is really decisions about defaults. I keep a public roadmap and write about my progress on my blog. The long-term plan is bigger: drop Debian entirely and build JonasOS from scratch on the Linux kernel, following Linux From Scratch.
+
+playlist-sync came from a simpler problem. I don't have Spotify Premium, but I wanted my playlists offline as normal MP3 files on my computer and a flash drive. The tool uses Spotify only as a list of songs. For every song missing from my music folder, it finds the track on YouTube, downloads it with yt-dlp and converts it with ffmpeg. It then looks up the correct metadata on Deezer or iTunes. A scoring system picks the right release by comparing the title, artist and track length, and it avoids compilations, remixes and live versions. The result is written into the MP3 as proper tags with album, year, track number and cover art. Songs are matched by file name instead of a database, so the same folder can be synced across devices and each one downloads only what's missing. I first wrote the project in JavaScript to learn the language, then rewrote the whole thing in C++20 with libcurl and TagLib. Now I'm adding a small Node.js server on my home server, so a shared song list can sync between people and devices.
+
+What connects these projects is that I want to understand the whole stack, from the boot process to an HTTP request, and the fastest way I know to learn it is to build something real.
+
+Homelab:
+ 
+KRATSI VERZE
+I run my own home server and self-host the services I use every day.
+ 
+My homelab is a home server called jonas-server, where I host my own cloud, passwords, media and blog. It's where I learn Linux administration, Docker, networking and backups by running real services I depend on.
+ 
+DELSI VERZE
+At home I run a server called jonas-server. It started as a place to try things out, and it slowly became the place where my everyday services live. I'd rather host my own cloud, passwords and media than rent them, and running them myself is also the best way I've found to learn how servers actually work.
+ 
+The server runs Ubuntu, and almost everything on it runs in Docker Compose. Nextcloud is my own cloud for files and calendar, with its own MariaDB database, Redis cache and cron container. Vaultwarden keeps my passwords and runs behind Cloudflare on my own domain. Jellyfin streams my movie and series library, and my blog is built with Hugo, served by Caddy and deployed as a Docker image. I also host a few smaller projects, like Lemma, a math-learning app. Storage from my NAS is mounted over CIFS, and Restic handles backups.
+ 
+To reach everything from outside, I set up Tailscale with subnet routing, so I can access my whole home network securely from anywhere without exposing services to the internet.
+ 
+Most of what I've learned came from things breaking. I've debugged DNS problems and ISP blocking on my home network, upgraded Vaultwarden when its browser extension stopped talking to the server, restructured my Jellyfin library when a TV series kept showing up as separate movies, and I'm upgrading Nextcloud one major version at a time, because skipping versions isn't an option. Every problem like that teaches me something new about Linux, containers, networking and patience.
+ 
+The homelab keeps growing. Next I'm building a morning dashboard on a big monitor that shows my server's stats, the weather, news, my calendar and bus departures, with a Node.js backend I'm writing myself.

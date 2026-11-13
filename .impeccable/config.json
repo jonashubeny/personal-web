@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "createdAt": "2026-11-13T11:16:11.547Z",
+        "reason": "user's own original style.css already specified Inter (\"Google Inter\" / \"Inter\"); kept per user's request to only change colours and font"
+      }
+    ]
+  }
+}
