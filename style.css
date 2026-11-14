@@ -324,3 +324,206 @@ hr{
         gap: 16px;
     }
 }
+
+/*  ---------------Karty---------------*/
+.cards-section {
+    max-width: 90vw;
+    margin: 0 auto;
+    padding: 48px 24px 112px;
+    text-align: left;
+}
+
+.cards-title {
+    margin: 0 0 32px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 2rem;
+    color: #ECEBE6;
+}
+
+#projects {
+    scroll-margin-top: 20vh;
+}
+
+.carousel {
+    position: relative;
+}
+
+.cards-track {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 20px 64px 28px;
+    scroll-padding: 0 64px;
+    scrollbar-width: none;
+
+    /* okraje řady plynule mizí do pozadí */
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 64px, #000 calc(100% - 64px), transparent 100%);
+            mask-image: linear-gradient(to right, transparent 0, #000 64px, #000 calc(100% - 64px), transparent 100%);
+}
+
+.cards-track::-webkit-scrollbar {
+    display: none;
+}
+
+/* ---------- Šipky karuselu ---------- */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid #2E2D29;
+    background: rgba(18, 18, 17, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    cursor: pointer;
+    transition: border-color 200ms ease;
+}
+
+.carousel-btn.prev {
+    left: 8px;
+}
+
+.carousel-btn.next {
+    right: 8px;
+}
+
+.carousel-btn:hover,
+.carousel-btn:focus-visible {
+    border-color: #F2A93B;
+}
+
+.carousel-btn img {
+    display: block;
+    width: 20px;
+    margin: auto;
+    transition: transform 200ms ease;
+}
+
+.carousel-btn.prev img {
+    transform: rotate(90deg);
+}
+
+.carousel-btn.next img {
+    transform: rotate(-90deg);
+}
+
+.carousel-btn.prev:hover img {
+    transform: rotate(90deg) scale(1.15);
+}
+
+.carousel-btn.next:hover img {
+    transform: rotate(-90deg) scale(1.15);
+}
+
+@media (max-width: 520px) {
+    .carousel-btn {
+        display: none;
+    }
+
+    .cards-track {
+        padding: 20px 16px 28px;
+        scroll-padding: 0 16px;
+        -webkit-mask-image: none;
+                mask-image: none;
+    }
+}
+
+.card {
+    flex: 0 0 min(360px, 80vw);
+    scroll-snap-align: start;
+    background: #1A1A18;
+    border: 1px solid #2E2D29;
+    border-radius: 14px;
+    padding: 28px;
+    transition: flex-basis 400ms ease, border-color 200ms ease, transform 300ms ease;
+}
+
+.card:hover {
+    border-color: #F2A93B;
+    transform: scale(1.02);
+}
+
+.card.is-open {
+    flex-basis: min(720px, 85vw);
+}
+
+.card h3 {
+    margin: 0 0 12px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 1.3rem;
+    color: #ECEBE6;
+}
+
+.card p {
+    margin: 0 0 1em;
+    color: #A3A199;
+    line-height: 1.6;
+}
+
+.card strong {
+    font-weight: 600;
+    color: #A3A199;
+    transition: color 300ms ease;
+}
+
+.card:hover strong,
+.card:focus-within strong,
+.card.is-open strong {
+    color: #F2A93B;
+}
+
+.card a {
+    color: #ECEBE6;
+    text-decoration: underline;
+    text-decoration-color: rgba(242, 169, 59, 0.5);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    transition: color 200ms ease, text-decoration-color 200ms ease;
+}
+
+.card a:hover,
+.card a:focus-visible {
+    color: #F2A93B;
+    text-decoration-color: #F2A93B;
+}
+
+/* výšku na "auto" nejde animovat, proto trik s gridem 0fr → 1fr */
+.card-more {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 400ms ease;
+}
+
+.card-more-inner {
+    overflow: hidden;
+}
+
+.card.is-open .card-more {
+    grid-template-rows: 1fr;
+}
+
+.card-toggle {
+    margin-top: 8px;
+    padding: 8px 16px;
+    background: none;
+    border: 1px solid #F2A93B;
+    border-radius: 8px;
+    color: #F2A93B;
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 200ms ease, color 200ms ease;
+}
+
+.card-toggle:hover,
+.card-toggle:focus-visible {
+    background: #F2A93B;
+    color: #121211;
+}

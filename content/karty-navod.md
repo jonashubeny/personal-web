@@ -61,7 +61,9 @@ Začni **jen jednou kartou**. Až bude fungovat, zkopíruješ ji pro ostatní.
         <h2 class="cards-title">What I do</h2>
 
         <div class="carousel">
-            <button class="carousel-btn prev" aria-label="Previous card">&#8249;</button>
+            <button class="carousel-btn prev" aria-label="Previous card">
+                <img src="images/down.png" alt="">
+            </button>
 
             <div class="cards-track">
 
@@ -87,7 +89,9 @@ Začni **jen jednou kartou**. Až bude fungovat, zkopíruješ ji pro ostatní.
 
             </div>
 
-            <button class="carousel-btn next" aria-label="Next card">&#8250;</button>
+            <button class="carousel-btn next" aria-label="Next card">
+                <img src="images/down.png" alt="">
+            </button>
         </div>
     </section>
 ```
@@ -104,8 +108,9 @@ Místo `...` vlož celé texty z `content/karty.txt`.
   - `.card-short` je obal pro KRATSI VERZI. Je vidět pořád.
   - `.card-more` je schovaná DELSI VERZE. Má uvnitř ještě `.card-more-inner`. Ten **musí** existovat kvůli animaci výšky (vysvětlím v CSS).
   - `.card-toggle` je tlačítko More.
-- `&#8249;` a `&#8250;` jsou znaky `‹` a `›` (šipky).
+- V obou šipkách je stejný obrázek `images/down.png`, který už používáš v úvodu. V CSS ho jen otočíme doleva a doprava (krok 2.6).
 - `aria-label` a `aria-expanded` nejsou vidět. Pomáhají lidem se čtečkou obrazovky (nevidomým) pochopit, co tlačítko dělá.
+- `alt=""` u obrázku šipky je prázdné schválně. Popis tlačítka už dává `aria-label`, takže by čtečka obrázek jen přečetla podruhé.
 
 ### 1.3.1 Jak rozdělit text na odstavce
 
@@ -338,17 +343,38 @@ Protože se roztahuje text uvnitř karty, roztahuje se plynule i karta samotná.
     border-radius: 50%;                    /* kolečko */
     border: 1px solid #2E2D29;
     background: #1A1A18;
-    color: #ECEBE6;
-    font-size: 1.6rem;
-    line-height: 1;
     cursor: pointer;
-    transition: border-color 200ms ease, color 200ms ease;
+    transition: border-color 200ms ease;
 }
 
 .carousel-btn:hover,
 .carousel-btn:focus-visible {
-    border-color: #F2A93B;
-    color: #F2A93B;
+    border-color: #F2A93B;              /* okraj kolečka se rozsvítí oranžově */
+}
+
+/* obrázek šipky uvnitř tlačítka */
+.carousel-btn img {
+    display: block;
+    width: 20px;                        /* velikost šipky, uprav podle oka */
+    margin: auto;                       /* vycentruje ji v kolečku */
+    transition: transform 200ms ease;
+}
+
+.carousel-btn.prev img {
+    transform: rotate(90deg);           /* dolů → doleva */
+}
+
+.carousel-btn.next img {
+    transform: rotate(-90deg);          /* dolů → doprava */
+}
+
+/* při najetí myší šipka trochu povyroste */
+.carousel-btn.prev:hover img {
+    transform: rotate(90deg) scale(1.15);
+}
+
+.carousel-btn.next:hover img {
+    transform: rotate(-90deg) scale(1.15);
 }
 
 @media (max-width: 520px) {
@@ -357,6 +383,13 @@ Protože se roztahuje text uvnitř karty, roztahuje se plynule i karta samotná.
     }
 }
 ```
+
+Jak to funguje:
+
+- `down.png` je šipka dolů. `rotate(90deg)` ji otočí o 90° **po směru** hodinových ručiček, takže míří doleva. `rotate(-90deg)` ji otočí **proti směru**, takže míří doprava.
+- Kdyby po otočení mířily šipky opačně, prohoď u `prev` a `next` znaménka (`90deg` ↔ `-90deg`).
+- V `:hover` se musí otočení napsat **znovu**, i když už je nahoře. Nový `transform` totiž přepíše ten starý celý. Kdyby tam bylo jen `scale(1.15)`, šipka by při najetí myší skočila zpátky dolů.
+- Šipka zůstane při najetí bílá. Barva textu (`color`) obrázek nepřebarví, proto se mění jen okraj kolečka.
 
 **Teď si stránku ulož a obnov.** Karty už by měly stát vedle sebe a jít posouvat kolečkem myši se Shiftem (nebo touchpadem). Tlačítka zatím nic nedělají, to přijde teď.
 
