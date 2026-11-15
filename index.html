@@ -15,7 +15,7 @@
         <a href="#" class="brand">Jonáš Hubený</a>
         <ul>
             <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
+            <li><a href="#projects">What I do</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#contacts">Contact</a></li>
         </ul>
@@ -59,7 +59,7 @@
 
             <div class="cards-track">
 
-                <article class="card">
+                <article class="card" id="card-modulbit">
                     <h3>ModulBit</h3>
                     <div class="card-short">
                         <p>I co-run <a href="https://modulbit.eu" target="_blank" rel="noopener">ModulBit</a>, <strong>making everyday tech easier for older people</strong>.</p>
@@ -77,7 +77,7 @@
                     <button class="card-toggle" aria-expanded="false">More</button>
                 </article>
 
-                <article class="card">
+                <article class="card" id="card-fedora">
                     <h3>Fedora</h3>
                     <div class="card-short">
                         <p>I write and maintain <a href="https://docs.fedoraproject.org" target="_blank" rel="noopener">Fedora documentation</a> as a member of the <strong>Docs Team</strong> and the Fedora Data Working Group. Since February 2026, <strong>31 of my pull requests</strong> have been merged across <strong>13 Fedora repositories</strong>.</p>
@@ -95,7 +95,7 @@
                     <button class="card-toggle" aria-expanded="false">More</button>
                 </article>
 
-                <article class="card">
+                <article class="card" id="card-hackathons">
                     <h3>Hackathons</h3>
                     <div class="card-short">
                         <div class="card-short-inner">
@@ -113,7 +113,7 @@
                     <button class="card-toggle" aria-expanded="false">More</button>
                 </article>
 
-                <article class="card">
+                <article class="card" id="card-projects">
                     <h3>My Projects</h3>
                     <div class="card-short">
                         <div class="card-short-inner">
@@ -125,7 +125,7 @@
                     <div class="card-more">
                         <div class="card-more-inner">
                             <p>Most of what I know, I learned by building something I wanted and figuring it out along the way. My two biggest projects started exactly like that.</p>
-                            <p>JonasOS began in May 2026, after I watched a video of someone making their own distro. I had no experience and had never written a bash script, so my first goal was simply to get an ISO to boot. Today JonasOS is a <strong>Debian-based live system</strong> built with live-build. My scripts build the ISO inside a Podman container and boot it in QEMU, so the whole system can be rebuilt with one command. It boots into an Xfce desktop with LightDM, installs to disk through the Calamares installer, and ships with my own defaults: the Arc-Red theme, a tuned shell setup for every new user and a small jonasos command-line tool with info, update and doctor commands. Along the way I learned bash, how a live system is assembled package by package, and how much of a distro is really decisions about defaults. I keep a public roadmap and write about my progress on my blog. The long-term plan is bigger: drop Debian entirely and build JonasOS from scratch on the Linux kernel, following <strong>Linux From Scratch</strong>.</p>
+                            <p>JonasOS began in May 2026, after I watched a video of someone making their own distro. I had no experience and had never written a bash script, so my first goal was simply to get an ISO to boot. Today JonasOS is a <strong>Debian-based live system</strong> built with live-build. My scripts build the ISO inside a Podman container and boot it in QEMU, so the whole system can be rebuilt with one command. It boots into an Xfce desktop with LightDM, installs to disk through the Calamares installer, and ships with my own defaults: the Arc-Red theme, a tuned shell setup for every new user and a small jonasos command-line tool with info, update and doctor commands. Along the way I learned bash, how a live system is assembled package by package, and how much of a distro is really decisions about defaults. I keep a public roadmap and write about my progress on my <a href="https://blog.jonashubeny.dev" target="_blank" rel="noopener">blog</a>. The long-term plan is bigger: drop Debian entirely and build JonasOS from scratch on the Linux kernel, following <strong>Linux From Scratch</strong>.</p>
                             <p>playlist-sync came from a simpler problem. I don't have Spotify Premium, but I wanted my playlists offline as normal MP3 files on my computer and a flash drive. The tool uses Spotify only as a list of songs. For every song missing from my music folder, it finds the track on YouTube, downloads it with yt-dlp and converts it with ffmpeg. It then looks up the correct metadata on Deezer or iTunes. A scoring system picks the right release by comparing the title, artist and track length, and it avoids compilations, remixes and live versions. The result is written into the MP3 as proper tags with album, year, track number and cover art. Songs are matched by file name instead of a database, so the same folder can be synced across devices and each one downloads only what's missing. I first wrote the project in JavaScript to learn the language, then rewrote the whole thing in <strong>C++20</strong> with libcurl and TagLib. Now I'm adding a small Node.js server on my home server, so a shared song list can sync between people and devices.</p>
                             <p>What connects these projects is that I want to <strong>understand the whole stack</strong>, from the boot process to an HTTP request, and the fastest way I know to learn it is to build something real.</p>
                         </div>
@@ -133,7 +133,7 @@
                     <button class="card-toggle" aria-expanded="false">More</button>
                 </article>
 
-                <article class="card">
+                <article class="card" id="card-homelab">
                     <h3>Homelab</h3>
                     <div class="card-short">
                         <div class="card-short-inner">
@@ -145,7 +145,7 @@
                     <div class="card-more">
                         <div class="card-more-inner">
                             <p>At home I run a server called jonas-server. It started as a place to try things out, and it slowly became the place where my everyday services live. I'd rather host my own cloud, passwords and media than rent them, and running them myself is also the best way I've found to learn how servers actually work.</p>
-                            <p>The server runs Ubuntu, and almost everything on it runs in <strong>Docker Compose</strong>. <strong>Nextcloud</strong> is my own cloud for files and calendar, with its own MariaDB database, Redis cache and cron container. <strong>Vaultwarden</strong> keeps my passwords and runs behind Cloudflare on my own domain. <strong>Jellyfin</strong> streams my movie and series library, and my blog is built with Hugo, served by Caddy and deployed as a Docker image. I also host a few smaller projects, like Lemma, a math-learning app. Storage from my NAS is mounted over CIFS, and Restic handles backups.</p>
+                            <p>The server runs Ubuntu, and almost everything on it runs in <strong>Docker Compose</strong>. <strong>Nextcloud</strong> is my own cloud for files and calendar, with its own MariaDB database, Redis cache and cron container. <strong>Vaultwarden</strong> keeps my passwords and runs behind Cloudflare on my own domain. <strong>Jellyfin</strong> streams my movie and series library, and my <a href="https://blog.jonashubeny.dev" target="_blank" rel="noopener">blog</a> is built with Hugo, served by Caddy and deployed as a Docker image. I also host a few smaller projects, like Lemma, a math-learning app. Storage from my NAS is mounted over CIFS, and Restic handles backups.</p>
                             <p>To reach everything from outside, I set up <strong>Tailscale with subnet routing</strong>, so I can access my whole home network securely from anywhere without exposing services to the internet.</p>
                             <p>Most of what I've learned came from <strong>things breaking</strong>. I've debugged DNS problems and ISP blocking on my home network, upgraded Vaultwarden when its browser extension stopped talking to the server, restructured my Jellyfin library when a TV series kept showing up as separate movies, and I'm upgrading Nextcloud one major version at a time, because skipping versions isn't an option. Every problem like that teaches me something new about Linux, containers, networking and patience.</p>
                             <p>The homelab keeps growing. Next I'm building a <strong>morning dashboard</strong> on a big monitor that shows my server's stats, the weather, news, my calendar and bus departures, with a Node.js backend I'm writing myself.</p>
@@ -160,7 +160,173 @@
             </button>
         </div>
     </section>
-    
+
+    <section class="skills-section" id="skills">
+        <h2 class="skills-title">Skills</h2>
+
+        <div class="skills-grid">
+            <div class="skill-group">
+                <h3>Languages</h3>
+                <dl>
+                    <div class="skill">
+                        <dt>C++</dt>
+                        <dd><a href="#card-projects" class="skill-ref">playlist-sync</a>, small apps, games and game engines</dd>
+                    </div>
+                    <div class="skill">
+                        <dt>JavaScript</dt>
+                        <dd>First version of <a href="#card-projects" class="skill-ref">playlist-sync</a>, Node.js on my <a href="#card-homelab" class="skill-ref">server</a></dd>
+                    </div>
+                    <div class="skill">
+                        <dt>Bash</dt>
+                        <dd>Build scripts for <a href="#card-projects" class="skill-ref">JonasOS</a></dd>
+                    </div>
+                </dl>
+            </div>
+            <div class="skill-group">
+                <h3>Linux &amp; containers</h3>
+                <dl>
+                    <div class="skill">
+                        <dt>Linux</dt>
+                        <dd><a href="#card-fedora" class="skill-ref">Fedora</a>, <a href="#card-projects" class="skill-ref">JonasOS</a> and my <a href="#card-homelab" class="skill-ref">home server</a></dd>
+                    </div>
+                    <div class="skill">
+                        <dt>Docker</dt>
+                        <dd>Runs almost everything on my <a href="#card-homelab" class="skill-ref">home server</a></dd>
+                    </div>
+                    <div class="skill">
+                        <dt>Podman</dt>
+                        <dd>Builds the <a href="#card-projects" class="skill-ref">JonasOS</a> ISO, testing commands for <a href="#card-fedora" class="skill-ref">Fedora docs</a></dd>
+                    </div>
+                </dl>
+            </div>
+            <div class="skill-group">
+                <h3>Servers &amp; automation</h3>
+                <dl>
+                    <div class="skill">
+                        <dt>Ansible</dt>
+                        <dd><a href="#card-modulbit" class="skill-ref">ModulBit</a> and <a href="#card-fedora" class="skill-ref">Fedora</a> infrastructure</dd>
+                    </div>
+                    <div class="skill">
+                        <dt>Tailscale</dt>
+                        <dd>Secure access to my <a href="#card-homelab" class="skill-ref">home network</a></dd>
+                    </div>
+                    <div class="skill">
+                        <dt>Caddy</dt>
+                        <dd>Serves my blog from my <a href="#card-homelab" class="skill-ref">home server</a></dd>
+                    </div>
+                </dl>
+            </div>
+            <div class="skill-group">
+                <h3>Collaboration &amp; docs</h3>
+                <dl>
+                    <div class="skill">
+                        <dt>Git</dt>
+                        <dd>Version control for everything I build</dd>
+                    </div>
+                    <div class="skill">
+                        <dt>Forgejo</dt>
+                        <dd>Running <a href="#card-modulbit" class="skill-ref">ModulBit</a>&rsquo;s self-hosted instance</dd>
+                    </div>
+                    <div class="skill">
+                        <dt>Technical writing</dt>
+                        <dd><a href="#card-fedora" class="skill-ref">Fedora</a> and <a href="#card-modulbit" class="skill-ref">ModulBit</a> docs</dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+
+        <p class="skills-also"><span>Also worked with</span> C# · Python · Unity · Blender</p>
+    </section>
+
+    <section class="hobbies-section" id="hobbies">
+        <h2 class="hobbies-title">Off the keyboard</h2>
+        <!-- Úvod: jedna až dvě věty, třeba „When I'm not at my computer, you'll usually find me …“ -->
+        <p class="hobbies-intro">When I'm not at my computer, you'll usually find me playing on my guitar rock and indie songs or just playing video games.</p>
+
+        <div class="hobbies-list">
+            <article class="hobby">
+            <img class="hobby-photo hobby-photo--portrait" src="images/kytara.jpg" alt="me playing guitar">
+
+                <div class="hobby-text">
+                    <h3>Playing guitar</h3>
+
+                    <p>I've been playing guitar almost every day since 2022, but I'm not particularly skilled player, but I don't really mind. I play because I enjoy music. I mostly play Czech songs by some of my favourite bands, such as Vypsana Fixa and Mňága a Žďorp. I'm also trying to make and produce my own music, but it's still a long journey ahead.</p>
+                    <p>I like to relax and just enjoy the sound of the guitar. I don't play professionally, so it's just for fun.</p>
+                </div>
+            </article>
+
+            <article class="hobby">
+                <img class="hobby-photo" src="images/vinyl.jpg" alt="signed vinyl">
+
+                <div class="hobby-text">
+                    <h3>Vinyl record collecting</h3>
+
+                    <p>I've been collecting vinyl records for almost two years now. My collection currently consists of around 20 records, mostly from artists and bands I really enjoy.</p>
+                    <p>One of my favourite records is Made in Valmez by Mňága a Žďorp, which I even got signed by the band. It's probably one of my most treasured pieces in the collection.</p>
+                    <p>I enjoy owning physical copies of music, looking through record sleeves and listening to entire albums rather than just individual songs. There's something special about it that streaming services simply can't replace.</p>
+                </div>
+            </article>
+
+            <article class="hobby">
+            <img class="hobby-photo" src="images/exploring.jpg" alt="hills on exploring photo">
+
+                <div class="hobby-text">
+                    <h3>Exploring new places</h3>
+                    <p>I enjoy exploring new places, whether it's a small village somewhere in Vysočina or a completely different part of the world. I especially like places with a unique atmosphere, quiet landscapes, forests and the sea.</p>
+                    <p>I'm drawn to places like Scotland, Iceland and the British countryside. I don't necessarily need a busy tourist destination or a packed itinerary. Sometimes I just enjoy walking around, discovering somewhere new and taking in the atmosphere.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contacts">
+        <h2 class="contact-title">Get in touch</h2>
+        <p class="contact-intro">The easiest way to reach me is by email. I'm happy to talk about projects, open source or anything on this page.</p>
+
+        <a class="contact-email" href="mailto:jonas@jonashubeny.dev">jonas@jonashubeny.dev</a>
+
+        <p class="contact-cv"><a href="cv/jonas-hubeny-cv.pdf" target="_blank" rel="noopener">Download my CV (PDF)</a></p>
+
+        <ul class="contact-links">
+            <li>
+                <a href="https://blog.jonashubeny.dev" target="_blank" rel="noopener">
+                    <span class="contact-label">Blog</span>
+                    <span class="contact-handle">blog.jonashubeny.dev <span aria-hidden="true">↗</span></span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/jonashubeny" target="_blank" rel="noopener">
+                    <span class="contact-label">GitHub</span>
+                    <span class="contact-handle">jonashubeny <span aria-hidden="true">↗</span></span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/jonashubeny/" target="_blank" rel="noopener">
+                    <span class="contact-label">LinkedIn</span>
+                    <span class="contact-handle">jonashubeny <span aria-hidden="true">↗</span></span>
+                </a>
+            </li>
+            <li>
+                <a href="https://forge.fedoraproject.org/jonashub" target="_blank" rel="noopener">
+                    <span class="contact-label">Fedora Forge</span>
+                    <span class="contact-handle">jonashub <span aria-hidden="true">↗</span></span>
+                </a>
+            </li>
+            <li>
+                <a href="https://git.modulbit.eu/Jonas" target="_blank" rel="noopener">
+                    <span class="contact-label">ModulBit Forgejo</span>
+                    <span class="contact-handle">Jonas <span aria-hidden="true">↗</span></span>
+                </a>
+            </li>
+            <li>
+                <a href="https://instagram.com/ich_bin_jonda" target="_blank" rel="noopener">
+                    <span class="contact-label">Instagram</span>
+                    <span class="contact-handle">ich_bin_jonda <span aria-hidden="true">↗</span></span>
+                </a>
+            </li>
+        </ul>
+    </section>
+
     <div class="footer">
         <p>&copy; 2026 Jonáš Hubený</p>
     </div>

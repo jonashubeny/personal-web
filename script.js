@@ -87,3 +87,30 @@ track.addEventListener('mouseenter', stopAuto);
 track.addEventListener('mouseleave', startAuto);
 
 startAuto();
+
+
+let highlightTimer = null;
+
+document.querySelectorAll('.skill-ref').forEach(function (link) {
+    link.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        const card = document.querySelector(link.getAttribute('href'));
+        const padding = parseFloat(getComputedStyle(track).paddingLeft) || 0;
+
+        stopAuto();
+        document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+        track.scrollTo({ left: card.offsetLeft - padding, behavior: 'smooth' });
+
+        cards.forEach(function (other) {
+            other.classList.remove('is-highlighted');
+        });
+        card.classList.add('is-highlighted');
+
+        clearTimeout(highlightTimer);
+        highlightTimer = setTimeout(function () {
+            card.classList.remove('is-highlighted');
+            startAuto();
+        }, 3000);
+    });
+});

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jonáš Hubený CV</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 18mm 20mm;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Helvetica Neue", Arial, "Liberation Sans", sans-serif;
+            font-size: 10pt;
+            line-height: 1.4;
+            color: #000;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        h1 {
+            margin: 0 0 4pt;
+            font-size: 18pt;
+        }
+
+        .contact {
+            margin: 0;
+        }
+
+        h2 {
+            margin: 16pt 0 6pt;
+            padding-bottom: 2pt;
+            border-bottom: 0.5pt solid #000;
+            font-size: 10.5pt;
+        }
+
+        .item {
+            margin-bottom: 8pt;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            gap: 12pt;
+        }
+
+        ul {
+            margin: 2pt 0 0;
+            padding-left: 14pt;
+        }
+
+        p {
+            margin: 2pt 0 0;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 0 0 2pt;
+            vertical-align: top;
+        }
+
+        td:first-child {
+            width: 30mm;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Jonáš Hubený</h1>
+    <p class="contact">
+        jonas@jonashubeny.dev &nbsp;|&nbsp;
+        github.com/jonashubeny &nbsp;|&nbsp;
+        linkedin.com/in/jonashubeny &nbsp;|&nbsp;
+        blog.jonashubeny.dev
+    </p>
+
+    <h2>Education</h2>
+    <div class="item">
+        <div class="row">
+            <b>Střední průmyslová škola Jihlava</b>
+            <span>present</span>
+        </div>
+        <p>Information Technology</p>
+    </div>
+
+    <h2>Experience</h2>
+    <div class="item">
+        <div class="row">
+            <span><b>ModulBit</b>, co-founder</span>
+            <span>Mar 2026 – present</span>
+        </div>
+        <ul>
+            <li>Open-source project that makes technology easier to use for older people. Our first product is Jana, an AI assistant that helps with writing emails.</li>
+            <li>Worked on the design of Jana's first version.</li>
+            <li>Run the team's self-hosted Forgejo, configured with Ansible.</li>
+        </ul>
+    </div>
+    <div class="item">
+        <div class="row">
+            <span><b>Fedora Project</b>, contributor (Docs Team, Data Working Group)</span>
+            <span>Feb 2026 – present</span>
+        </div>
+        <ul>
+            <li>31 merged pull requests in 13 repositories, mostly Quick Docs and the Beginner's Guide.</li>
+            <li>Wrote a guide to power management with powertop2tuned and updated the YubiKey setup docs.</li>
+            <li>Review pull requests from other contributors. Helped move the Docs Team guides to Fedora Forge.</li>
+            <li>Added Parquet import to the datanommer-mini tool.</li>
+        </ul>
+    </div>
+    <div class="item">
+        <div class="row">
+            <span><b>McDonald's</b>, crew member (part-time)</span>
+            <span>Feb 2026 – present</span>
+        </div>
+        <p>Working in the kitchen alongside school, as part of a fast-paced team.</p>
+    </div>
+
+    <h2>Projects</h2>
+    <div class="item">
+        <div class="row">
+            <b>JonasOS</b>
+            <span>github.com/jonashubeny/jonasos</span>
+        </div>
+        <p>Debian-based Linux distribution built with live-build. The ISO is built in a Podman container and tested in QEMU.</p>
+    </div>
+    <div class="item">
+        <div class="row">
+            <b>playlist-sync</b>
+            <span>github.com/jonashubeny/playlist-sync</span>
+        </div>
+        <p>Downloads Spotify playlists as MP3 files with correct tags. Written in C++20, first version in JavaScript.</p>
+    </div>
+    <div class="item">
+        <b>Home server</b>
+        <p>Ubuntu with Docker Compose: Nextcloud, Vaultwarden, Jellyfin and my blog (Hugo, Caddy). Backups with Restic, remote access with Tailscale.</p>
+    </div>
+    <div class="item">
+        <b>Hackathons</b>
+        <p>Rakathon: built PillGaze, a tool for doctors to collect a patient's medication history. Team of three, I did the frontend. Also took part in Hack Jak Brno.</p>
+    </div>
+
+    <h2>Skills</h2>
+    <table>
+        <tr><td>Programming</td><td>C++, JavaScript, Bash, basic C# and Python</td></tr>
+        <tr><td>Systems</td><td>Linux, Docker, Podman, Ansible, Tailscale, Caddy</td></tr>
+        <tr><td>Tools</td><td>Git, Forgejo</td></tr>
+        <tr><td>Languages</td><td>Czech (native), English (advanced, not certified)</td></tr>
+    </table>
+
+    <h2>Interests</h2>
+    <p>Guitar, vinyl records, exploring the outdoors.</p>
+
+</body>
+</html>

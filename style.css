@@ -58,6 +58,8 @@ body {
     font-family: "JetBrains Mono", monospace;
     text-decoration: none;
     font-weight: 500;
+    letter-spacing: -0.04em;
+    word-spacing: -0.2em;
     display: inline-block;
     width: fit-content;
 }
@@ -185,33 +187,6 @@ hr{
     }
 }
 
-.skills { 
-    color: #ECEBE6;
-    max-width: 400px;
-    font-size: 120%;
-    background: #1A1A18;
-    border-radius: 14px;
-    padding: 32px;
-    margin-bottom: 40px;
-    border: 1px solid #2E2D29;
-    margin-top: 10%;
-    transition: all 0.3s;
-}
-
-.skills:hover {
-    transform: scale(1.1);
-}
-
-.skills ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.skill {
-    padding: 13px;
-}
-
 .back-video {
     position: absolute;
     right: 0;
@@ -309,7 +284,7 @@ hr{
   transform: scaleX(1);
 }
 
-#about, #skills, #contact{
+#about, #skills, #hobbies, #contacts{
   scroll-margin-top: 20vh;
 }
 
@@ -526,4 +501,299 @@ hr{
 .card-toggle:focus-visible {
     background: #F2A93B;
     color: #121211;
+}
+
+/* ---------- Skills ---------- */
+.skills-section {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 48px 24px 112px;
+    text-align: left;
+}
+
+.skills-title {
+    margin: 0 0 48px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 2.4rem;
+    color: #ECEBE6;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 56px;
+}
+
+.skill-group h3 {
+    margin: 0 0 24px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #2E2D29;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #F2A93B;
+}
+
+.skill-group dl {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    margin: 0;
+}
+
+.skill dt {
+    margin-bottom: 6px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ECEBE6;
+}
+
+.skill dd {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.55;
+    color: #A3A199;
+}
+
+.skill-ref {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: #4A4842;
+    text-underline-offset: 3px;
+    transition: color 200ms ease, text-decoration-color 200ms ease;
+}
+
+.skill-ref:hover,
+.skill-ref:focus-visible {
+    color: #F2A93B;
+    text-decoration-color: #F2A93B;
+}
+
+.skills-also {
+    margin: 56px 0 0;
+    padding-top: 24px;
+    font-size: 1.1rem;
+    border-top: 1px solid #2E2D29;
+    color: #ECEBE6;
+}
+
+.skills-also span {
+    margin-right: 12px;
+    color: #A3A199;
+}
+
+.card.is-highlighted {
+    border-color: #F2A93B;
+}
+
+.card.is-highlighted strong {
+    color: #F2A93B;
+}
+
+@media (max-width: 900px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px 32px;
+    }
+}
+
+@media (max-width: 520px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ---------- Hobbies ---------- */
+.hobbies-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 48px 24px 112px;
+    text-align: left;
+}
+
+.hobbies-title {
+    margin: 0 0 16px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 2rem;
+    color: #ECEBE6;
+}
+
+.hobbies-intro {
+    max-width: 62ch;
+    margin: 0 0 56px;
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #ECEBE6;
+}
+
+.hobbies-list {
+    display: flex;
+    flex-direction: column;
+    gap: 72px;
+}
+
+.hobby {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 56px;
+    align-items: center;
+}
+
+.hobby:nth-child(even) {
+    grid-template-columns: 1fr 320px;
+}
+
+.hobby:nth-child(even) .hobby-photo {
+    order: 2;
+}
+
+.hobby-photo {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.hobby-photo--portrait {
+    aspect-ratio: 2 / 3;
+    object-position: center top;
+}
+
+.hobby-photo--empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed #2E2D29;
+    color: #4A4842;
+    font-family: "JetBrains Mono", monospace;
+}
+
+.hobby-text h3 {
+    margin: 0 0 16px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 1.4rem;
+    color: #ECEBE6;
+}
+
+.hobby-text p {
+    max-width: 55ch;
+    margin: 0 0 1em;
+    line-height: 1.7;
+    color: #A3A199;
+}
+
+@media (max-width: 760px) {
+    .hobby,
+    .hobby:nth-child(even) {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .hobby:nth-child(even) .hobby-photo {
+        order: 0;
+    }
+
+    .hobby-photo {
+        max-width: 420px;
+    }
+}
+
+/* ---------- Contact ---------- */
+.contact-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 48px 24px 96px;
+    text-align: left;
+}
+
+.contact-title {
+    margin: 0 0 16px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 2rem;
+    color: #ECEBE6;
+}
+
+.contact-intro {
+    max-width: 55ch;
+    margin: 0 0 32px;
+    line-height: 1.7;
+    color: #A3A199;
+}
+
+.contact-email {
+    display: inline-block;
+    margin-bottom: 24px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: clamp(1.3rem, 4vw, 2.2rem);
+    font-weight: 700;
+    color: #ECEBE6;
+    text-decoration: underline;
+    text-decoration-color: #F2A93B;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 8px;
+    word-break: break-all;
+    transition: color 200ms ease;
+}
+
+.contact-email:hover,
+.contact-email:focus-visible {
+    color: #F2A93B;
+}
+
+.contact-cv {
+    margin: 0 0 56px;
+}
+
+.contact-cv a {
+    color: #A3A199;
+    text-decoration: underline;
+    text-decoration-color: #4A4842;
+    text-underline-offset: 4px;
+    transition: color 200ms ease, text-decoration-color 200ms ease;
+}
+
+.contact-cv a:hover,
+.contact-cv a:focus-visible {
+    color: #F2A93B;
+    text-decoration-color: #F2A93B;
+}
+
+.contact-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 48px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.contact-links a {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid #2E2D29;
+    text-decoration: none;
+}
+
+.contact-label {
+    font-weight: 600;
+    color: #ECEBE6;
+}
+
+.contact-handle {
+    color: #A3A199;
+    transition: color 200ms ease;
+}
+
+.contact-links a:hover .contact-handle,
+.contact-links a:focus-visible .contact-handle {
+    color: #F2A93B;
+}
+
+@media (max-width: 640px) {
+    .contact-links {
+        grid-template-columns: 1fr;
+    }
 }
